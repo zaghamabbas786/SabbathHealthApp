@@ -9,12 +9,9 @@ export async function POST() {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
-    // Redirect to the pricing page which contains the PricingTable
-    // Clerk's PricingTable component handles the checkout flow
-    const pricingUrl = `${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}/pricing`
-    
+    // Use relative URL - works in all environments (local, staging, production)
     return NextResponse.json({ 
-      url: pricingUrl,
+      url: '/pricing',
       message: 'Redirect to pricing page'
     })
   } catch (error) {
