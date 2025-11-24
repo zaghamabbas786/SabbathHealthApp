@@ -57,90 +57,26 @@ export default function PricingPageClient() {
           </div>
         )}
 
-        {/* Clerk Pricing Table or Fallback */}
+        {/* Clerk Pricing Table */}
         <div className="w-full max-w-5xl">
-          {/* Fallback pricing display - will be replaced by Clerk PricingTable once billing is enabled */}
-          <div className="bg-white rounded-3xl border-2 border-sabbath-subtle shadow-lg p-12 text-center">
-            <div className="mb-6">
-              <svg className="w-16 h-16 mx-auto text-sabbath-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-              </svg>
-            </div>
-            <h2 className="font-serif text-4xl text-sabbath-espresso mb-4">Sabbath Health Plus</h2>
-            <div className="mb-6">
-              <span className="font-serif text-6xl text-sabbath-espresso">$5</span>
-              <span className="text-sabbath-warmGray text-xl">/month</span>
-            </div>
-            <p className="text-sabbath-earth font-sans text-lg mb-8">
-              Full access to Jesus-centered healing insights
-            </p>
-            <ul className="text-left mb-10 space-y-3 max-w-md mx-auto">
-              {[
-                'Unlimited AI-powered healing insights',
-                'Personalized prayer guidance',
-                '7-day healing programs',
-                'Emotional & spiritual analysis',
-                'Scripture-based reflections'
-              ].map((feature, i) => (
-                <li key={i} className="flex items-center gap-3">
-                  <svg className="w-5 h-5 text-sabbath-moss shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                  </svg>
-                  <span className="text-sabbath-espresso font-sans">{feature}</span>
-                </li>
-              ))}
-            </ul>
-            
-            <div className="bg-sabbath-ivory border-2 border-sabbath-gold/30 rounded-2xl p-6 mb-6">
-              <p className="text-sabbath-espresso font-sans font-bold mb-2">
-                🔧 Clerk Billing Setup Required
-              </p>
-              <p className="text-sabbath-earth font-sans text-sm mb-4">
-                To enable subscriptions, complete the setup in your Clerk Dashboard:
-              </p>
-              <ol className="text-left text-sabbath-earth font-sans text-sm space-y-2 mb-4">
-                <li>1. Go to <strong>Configure → Billing</strong></li>
-                <li>2. Click <strong>Enable Billing</strong></li>
-                <li>3. Connect your Stripe account</li>
-                <li>4. Create a subscription plan</li>
-                <li>5. Create entitlement: <code className="bg-sabbath-subtle px-2 py-0.5 rounded">start_experience</code></li>
-              </ol>
-              <a 
-                href="https://dashboard.clerk.com/last-active?path=billing/settings"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block px-6 py-3 rounded-full bg-sabbath-espresso text-white hover:bg-sabbath-clay transition-all duration-200 font-sans text-sm font-bold uppercase tracking-widest"
-              >
-                Open Clerk Dashboard →
-              </a>
-            </div>
-
-            <p className="text-sabbath-warmGray font-sans text-xs">
-              See <strong>CLERK_BILLING_COMPLETE_SETUP.md</strong> for detailed instructions
-            </p>
-          </div>
-          
-          {/* This will work once Clerk Billing is enabled */}
-          <div className="hidden">
-            <PricingTable 
-              appearance={{
-                elements: {
-                  rootBox: 'w-full',
-                  card: 'bg-white rounded-3xl border-2 border-sabbath-subtle shadow-lg hover:shadow-xl transition-shadow',
-                  cardHeader: 'bg-sabbath-ivory rounded-t-3xl p-8',
-                  cardTitle: 'font-serif text-3xl text-sabbath-espresso',
-                  cardDescription: 'font-sans text-sabbath-earth mt-2',
-                  cardContent: 'p-8',
-                  cardFooter: 'p-8 pt-0',
-                  feature: 'font-sans text-sabbath-espresso py-2',
-                  featureIcon: 'text-sabbath-moss',
-                  pricingAmount: 'font-serif text-5xl text-sabbath-espresso',
-                  pricingCurrency: 'text-sabbath-warmGray',
-                  button: 'w-full py-4 rounded-full bg-sabbath-espresso text-white hover:bg-sabbath-clay transition-all duration-200 font-sans text-sm font-bold uppercase tracking-widest shadow-lg',
-                },
-              }}
-            />
-          </div>
+          <PricingTable 
+            appearance={{
+              elements: {
+                rootBox: 'w-full',
+                card: 'bg-white rounded-3xl border-2 border-sabbath-subtle shadow-lg hover:shadow-xl transition-shadow',
+                cardHeader: 'bg-sabbath-ivory rounded-t-3xl p-8',
+                cardTitle: 'font-serif text-3xl text-sabbath-espresso',
+                cardDescription: 'font-sans text-sabbath-earth mt-2',
+                cardContent: 'p-8',
+                cardFooter: 'p-8 pt-0',
+                feature: 'font-sans text-sabbath-espresso py-2',
+                featureIcon: 'text-sabbath-moss',
+                pricingAmount: 'font-serif text-5xl text-sabbath-espresso',
+                pricingCurrency: 'text-sabbath-warmGray',
+                button: 'w-full py-4 rounded-full bg-sabbath-espresso text-white hover:bg-sabbath-clay transition-all duration-200 font-sans text-sm font-bold uppercase tracking-widest shadow-lg',
+              },
+            }}
+          />
         </div>
 
         {/* Back to Home Link */}
